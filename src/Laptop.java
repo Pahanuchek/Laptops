@@ -65,17 +65,13 @@ public class Laptop {
         return processorTitle;
     }
 
-    public void setProcessorTitle(String processorTitle) {
-        this.processorTitle = processorTitle;
-    }
+    public void setProcessorTitle(String processorTitle) { this.processorTitle = processorTitle; }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+    public void setColor(String color) { this.color = color; }
 
     @Override
     public boolean equals(Object o) {
@@ -99,14 +95,12 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                "title='" + title + '\'' +
-                ", operationSystem='" + operationSystem + '\'' +
-                ", screenDiagonal=" + screenDiagonal +
-                ", randomAccessMemory=" + randomAccessMemory +
-                ", solidStateDrive=" + solidStateDrive +
-                ", processorTitle='" + processorTitle + '\'' +
-                ", color='" + color + '\'' +
-                '}';
+        return "Laptop: " + title + System.lineSeparator() +
+                "Operation System: " + operationSystem + System.lineSeparator() +
+                "Screen Diagonal: " + screenDiagonal + System.lineSeparator() +
+                "Random Access Memory: " + randomAccessMemory + "Mb" + System.lineSeparator() +
+                "Solid State Drive: " + solidStateDrive + "Gb" + System.lineSeparator() +
+                "Processor Title: " + processorTitle + System.lineSeparator() +
+                "Color: " + color + System.lineSeparator();
     }
 }
