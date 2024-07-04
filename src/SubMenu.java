@@ -1,52 +1,71 @@
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class SubMenu {
     public static Map<Integer, String> getParametersSubMenu(Set<Laptop> listLaptop, String flag) {
         Map<Integer, String> listParameters = new TreeMap<>();
         int count = 1;
+        Set<String> listParameterExclusive = new TreeSet<>();
         switch (flag) {
             case "Title":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getTitle());
+                    listParameterExclusive.add(laptop.getTitle());
+                }
+                for (String title: listParameterExclusive) {
+                    listParameters.put(count, title);
                     count++;
                 }
                 break;
             case "Operation system":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getOperationSystem());
+                    listParameterExclusive.add(laptop.getOperationSystem());
+                }
+                for (String operationSystem: listParameterExclusive) {
+                    listParameters.put(count, operationSystem);
                     count++;
                 }
                 break;
             case "Screen diagonal":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getScreenDiagonal() + "");
+                    listParameterExclusive.add(laptop.getScreenDiagonal() + "");
+                }
+                for (String screenDiagonal: listParameterExclusive) {
+                    listParameters.put(count, screenDiagonal);
                     count++;
                 }
                 break;
             case "Random access memory":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getRandomAccessMemory() + "");
+                    listParameterExclusive.add(laptop.getRandomAccessMemory() + "");
+                }
+                for (String randomAccessMemory: listParameterExclusive) {
+                    listParameters.put(count, randomAccessMemory);
                     count++;
                 }
                 break;
             case "Solid state drive":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getSolidStateDrive() + "");
+                    listParameterExclusive.add(laptop.getSolidStateDrive() + "");
+                }
+                for (String solidStateDrive: listParameterExclusive) {
+                    listParameters.put(count, solidStateDrive);
                     count++;
                 }
                 break;
             case "Procession title":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getProcessorTitle());
+                    listParameterExclusive.add(laptop.getProcessorTitle());
+                }
+                for (String processorTitle: listParameterExclusive) {
+                    listParameters.put(count, processorTitle);
                     count++;
                 }
                 break;
             case "Color":
                 for (Laptop laptop: listLaptop) {
-                    listParameters.put(count, laptop.getColor());
+                    listParameterExclusive.add(laptop.getColor());
+                }
+                for (String color: listParameterExclusive) {
+                    listParameters.put(count, color);
                     count++;
                 }
                 break;

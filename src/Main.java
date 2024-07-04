@@ -17,11 +17,45 @@ public class Main {
         }
     }
     public static Set<Laptop> setListLaptop() {
-        Laptop laptop1 = new Laptop("Acer", "Windows", 17.5,
+        Laptop laptop1 = new Laptop("Acer", "Windows", 24,
                 16, 512, "Intel", "Black");
-        Laptop laptop2 = new Laptop("Mac", "MacOS", 19.4,
+        Laptop laptop2 = new Laptop("Apple", "MacOS", 24,
                 8, 256, "AMD", "Grey");
-        return new HashSet<>(Arrays.asList(laptop1, laptop2));
+        Laptop laptop3 = new Laptop("Apple", "MacOS", 24,
+                4, 512, "Intel", "White");
+        Laptop laptop4 = new Laptop("Apple", "MacOS", 32,
+                16, 1024, "AMD", "Green");
+        Laptop laptop5 = new Laptop("Apple", "MacOS", 42,
+                8, 256, "Intel", "Grey");
+        Laptop laptop6 = new Laptop("Apple", "MacOS", 24,
+                32, 128, "Intel", "Yellow");
+        Laptop laptop7 = new Laptop("Apple", "MacOS", 32,
+                16, 512, "AMD", "Grey");
+        Laptop laptop8 = new Laptop("Acer", "Linux", 42,
+                4, 512, "Intel", "Black");
+        Laptop laptop9 = new Laptop("Acer", "Windows", 24,
+                4, 128, "AMD", "Yellow");
+        Laptop laptop10 = new Laptop("Acer", "Windows", 32,
+                16, 256, "Intel", "Grey");
+        Laptop laptop11 = new Laptop("Acer", "Linux", 24,
+                8, 1024, "AMD", "Black");
+        Laptop laptop12 = new Laptop("Acer", "Windows", 42,
+                32, 512, "Intel", "Yellow");
+        Laptop laptop13 = new Laptop("HP", "Linux", 24,
+                8, 256, "Intel", "Grey");
+        Laptop laptop14 = new Laptop("HP", "Windows", 24,
+                8, 512, "AMD", "White");
+        Laptop laptop15 = new Laptop("HP", "Windows", 24,
+                16, 256, "Intel", "Black");
+        Laptop laptop16 = new Laptop("HP", "Linux", 32,
+                16, 512, "Intel", "Yellow");
+        Laptop laptop17 = new Laptop("HP", "Windows", 32,
+                8, 128, "AMD", "Black");
+        Laptop laptop18 = new Laptop("HP", "Linux", 42,
+                64, 1024, "Intel", "Grey");
+        return new HashSet<>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6,
+                laptop7, laptop8, laptop9, laptop10, laptop11, laptop12, laptop13, laptop14, laptop15,
+                laptop16, laptop17, laptop18));
     }
 
     public static void runProgram(Menu menu, Request request, Map<String,String> mapRequest, Scanner scanner) {
