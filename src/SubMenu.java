@@ -1,4 +1,9 @@
-import java.util.*;
+import java.util.TreeMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
 
 public class SubMenu {
     public static Map<Integer, String> getParametersSubMenu(Set<Laptop> listLaptop, String flag) {

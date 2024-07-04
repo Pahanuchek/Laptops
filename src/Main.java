@@ -1,4 +1,9 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Arrays;
 
 public class Main {
     public static Map<String,String> mapRequest = new HashMap<>();
@@ -59,7 +64,7 @@ public class Main {
     }
 
     public static void runProgram(Menu menu, Request request, Map<String,String> mapRequest, Scanner scanner) {
-        while (true) {
+        while(true) {
             menu.printMenu();
             String point = menu.getMenuPoint(scanner);
             if (!point.equals(LaptopParameters.THROW_OFF.label)) {
