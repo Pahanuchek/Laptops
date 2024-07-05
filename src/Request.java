@@ -1,3 +1,4 @@
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -5,8 +6,7 @@ public class Request {
     private Map<String, String> request;
 
     public Request() {
-        this.request = new TreeMap<>();
-        this.request.put(LaptopParameters.BACK.label, null);
+        this.request = new LinkedHashMap<>();
         this.request.put(LaptopParameters.TITLE.label, null);
         this.request.put(LaptopParameters.OPERATION_SYSTEM.label, null);
         this.request.put(LaptopParameters.SCREEN_DIAGONAL.label, null);

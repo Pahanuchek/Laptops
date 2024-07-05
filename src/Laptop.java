@@ -1,4 +1,4 @@
-import java.util.Objects;
+import java.util.*;
 
 public class Laptop {
     private String title;
@@ -9,7 +9,7 @@ public class Laptop {
     private String processorTitle;
     private String color;
 
-    public Laptop(String title, String operationSystem, double screenDiagonal,
+    public Laptop(String title, String operationSystem, int screenDiagonal,
                   int randomAccessMemory, int solidStateDrive, String processorTitle,
                   String color) {
         this.title = title;
@@ -102,5 +102,34 @@ public class Laptop {
                 "Solid State Drive: " + solidStateDrive + "Gb" + System.lineSeparator() +
                 "Processor Title: " + processorTitle + System.lineSeparator() +
                 "Color: " + color + System.lineSeparator();
+    }
+
+    public static Set<Laptop> getQualify(Map<String, String> request, Set<Laptop> laptopList) {
+        Set<Laptop> resultFilter = new HashSet<>();
+        for (Laptop laptop: laptopList) {
+            if ((request.get(LaptopParameters.TITLE.label) == null ||
+                    laptop.getTitle().equals(request.get(LaptopParameters.TITLE.label))) &&
+                    (request.get(LaptopParameters.OPERATION_SYSTEM.label) == null ||
+                    laptop.getOperationSystem().equals(request.get(LaptopParameters.OPERATION_SYSTEM.label))) &&
+                    (request.get(LaptopParameters.SCREEN_DIAGONAL.label) == null ||
+                    laptop.getScreenDiagonal() >= Double.parseDouble(request.get(LaptopParameters.SCREEN_DIAGONAL.label))) &&
+                    (request.get(LaptopParameters.RANDOM_ACCESS_MEMORY.label) == null ||
+                    laptop.getRandomAccessMemory() >= Integer.parseInt(request.get(LaptopParameters.RANDOM_ACCESS_MEMORY.label))) &&
+                    (request.get(LaptopParameters.SOLID_STATE_DRIVE.label) == null ||
+                    laptop.getSolidStateDrive() >= Integer.parseInt(request.get(LaptopParameters.SOLID_STATE_DRIVE.label))) &&
+                    (request.get(LaptopParameters.PROCESSOR_TITLE.label) == null ||
+                    laptop.getProcessorTitle().equals(request.get(LaptopParameters.PROCESSOR_TITLE.label))) &&
+                    (request.get(LaptopParameters.COLOR.label) == null ||
+                    laptop.getColor().equals(request.get(LaptopParameters.COLOR.label)))) {
+                resultFilter.add(laptop);
+            }
+        }
+        return resultFilter;
+    }
+
+    public static void printLaptop(Set<Laptop> listLaptop) {
+        for(Laptop laptop: listLaptop) {
+            System.out.println(laptop);
+        }
     }
 }

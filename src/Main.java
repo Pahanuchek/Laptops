@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Arrays;
 
 public class Main {
+    public static Set<Laptop> resultFilter = new HashSet<>();
     public static Map<String,String> mapRequest = new HashMap<>();
     public static Menu menu = new Menu();
     public static Request request = new Request();
@@ -67,15 +68,19 @@ public class Main {
         while(true) {
             menu.printMenu();
             String point = menu.getMenuPoint(scanner);
-            if (!point.equals(LaptopParameters.THROW_OFF.label)) {
+            if (!point.equals(LaptopParameters.THROW_OFF.label) && !point.equals(LaptopParameters.QUALIFY.label)) {
                 Map<Integer, String> subMenu = SubMenu.getParametersSubMenu(setListLaptop(), point);
                 SubMenu.printSubMenu(subMenu);
-                String pointSubMenu = SubMenu.getSubMenuPoint(subMenu, scanner);
+                String pointSubMenu;
+                pointSubMenu = SubMenu.getSubMenuPoint(subMenu, scanner);
                 if (pointSubMenu.equals(LaptopParameters.BACK.label)) continue;
                 mapRequest = request.setRequest(point, pointSubMenu);
                 System.out.println(request);
-            } else {
-                request = new Request();
+            } else if(point.equals(LaptopParameters.QUALIFY.label)) {
+                resultFilter = Laptop.getQualify(mapRequest, setListLaptop());
+                Laptop.printLaptop(resultFilter);
+            } else if (point.equals(LaptopParameters.THROW_OFF.label)){
+                mapRequest = new HashMap<>();
             }
         }
     }
